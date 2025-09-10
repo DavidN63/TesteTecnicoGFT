@@ -1,0 +1,50 @@
+using System;
+
+public class ContaBancaria
+{
+    public decimal Saldo { get; private set; }
+
+    public void Depositar(decimal valor)
+    {
+        if (valor > 0)
+        {
+            Saldo += valor;
+            Console.WriteLine($"Depósito de R${valor} realizado.");
+        }
+        else
+        {
+            Console.WriteLine("Valor de depósito inválido.");
+        }
+    }
+
+    public void Sacar(decimal valor)
+    {
+        if (valor > 0 && valor <= Saldo)
+        {
+            Saldo -= valor;
+            Console.WriteLine($"Saque de R${valor} realizado.");
+        }
+        else
+        {
+            Console.WriteLine("Saque não permitido. Saldo insuficiente!");
+        }
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        ContaBancaria conta = new ContaBancaria();
+
+        Console.Write("Digite o valor para depositar: ");
+        decimal deposito = Convert.ToDecimal(Console.ReadLine());
+        conta.Depositar(deposito);
+
+        Console.Write("Digite o valor para sacar: ");
+        decimal saque = Convert.ToDecimal(Console.ReadLine());
+        conta.Sacar(saque);
+
+        Console.WriteLine($"Saldo final: R${conta.Saldo}");
+    }
+}
