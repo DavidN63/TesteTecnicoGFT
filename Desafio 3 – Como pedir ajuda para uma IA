@@ -1,0 +1,18 @@
+/*
+Quero desenvolver um sistema em Java que precisa consumir uma API externa. 
+Tenho uma classe chamada ApiService com um método conectar() e um token de acesso. 
+Quais são as boas práticas de segurança para armazenar e utilizar o token da API? 
+Poderia também fornecer um exemplo de código para realizar a conexão e consumir dados dessa API de forma segura e eficiente?
+O inicio do meu código está assim
+
+public class ApiService
+{
+    private static final String API_TOKEN = "sk-test-12345-ABCDE-67890-FGHIJ";
+
+public void conectar()
+    {
+        // TODO: lógica para consumir API
+    }
+
+}
+*/
